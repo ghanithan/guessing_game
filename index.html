@@ -7,13 +7,22 @@ async function loadFileAndPrintToConsole(url) {
     const response = await fetch(url);
     const data = await response.text();
     console.log(data);
-    const encoded = encodeURI(data);
+    const encoded = encodeURIComponent(data);
     console.log(encoded);
+    let uriCodeEmbedded = "https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=" + uri;
+    console.log(uriCodeEmbedded);
+    loadIframe(uriCodeEmbedded);
   } catch (err) {
     console.error(err);
   }
 }
 
+function loadIframe(url){
+	const iframe = document.createElement("iframe");
+	iframe.style.display = "block";
+	iframe.src = url;
+	document.body.appendChild(iframe);
+}
 loadFileAndPrintToConsole('src/main.rs');
 
 
