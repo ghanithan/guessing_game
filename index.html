@@ -9,7 +9,7 @@ async function loadFileAndPrintToConsole(url) {
     console.log(data);
     const encoded = encodeURIComponent(data);
     console.log(encoded);
-    let uriCodeEmbedded = "https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=" + uri;
+    let uriCodeEmbedded = "https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=" + encoded;
     console.log(uriCodeEmbedded);
     loadIframe(uriCodeEmbedded);
   } catch (err) {
