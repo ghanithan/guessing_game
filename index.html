@@ -21,6 +21,8 @@ function loadIframe(url){
 	const iframe = document.createElement("iframe");
 	iframe.style.display = "block";
 	iframe.src = url;
+	iframe.style.width = '100vw';
+	iframe.style.height = '80vh';
 	document.body.appendChild(iframe);
 }
 loadFileAndPrintToConsole('src/main.rs');
